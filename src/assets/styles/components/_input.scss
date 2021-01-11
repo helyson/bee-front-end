@@ -1,0 +1,5 @@
+@each $color-key, $color-value in $primary-colors {
+    .beetrack-input-#{$color-key} {
+      @include InputVariant($color-value);
+    }
+  }

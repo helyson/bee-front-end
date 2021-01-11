@@ -1,0 +1,18 @@
+$button-colors: (
+  "primary": (
+    "background": $main-color,
+    "color": $white-color,
+  ),
+  "secondary": (
+    "background": $white-color,
+    "color": $main-color,
+  ),
+  "gray": (
+    "background": $gray-color,
+    "color": $main-color,
+  ),
+  "normal": (
+    "background": $white-color,
+    "color": $black-color,
+  ),
+);

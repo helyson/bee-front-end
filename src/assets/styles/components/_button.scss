@@ -1,0 +1,47 @@
+@each $color-key, $color-value in $button-colors {
+  .beetrack-btn-#{$color-key} {
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 8px 24px;
+    text-align: center;
+    vertical-align: middle;
+    @include ButtonVariant(
+      map-get($color-value, background),
+      map-get($color-value, color)
+    );
+  }
+}
+
+@each $color-key, $color-value in $primary-colors {
+  .beetrack-icon-#{$color-key} {
+    background: none;
+    border: none;
+    cursor: pointer;
+    @include IconVariant($color-value);
+  }
+}
+
+@each $color-key, $color-value in $primary-colors {
+  .beetrack-link-#{$color-key} {
+    background: none;
+    border: none;
+    cursor: pointer;
+    @include IconVariant($color-value);
+  }
+}
+
+@each $color-key, $color-value in $button-colors {
+  .beetrack-textIcon-#{$color-key} {
+    background: none;
+    border: none;
+    cursor: pointer;
+    @include IconTextVariant(
+      map-get($color-value, background),
+      map-get($color-value, color)
+    );
+  }
+}

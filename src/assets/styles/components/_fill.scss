@@ -1,0 +1,6 @@
+@each $color-key, $color-value in $primary-colors {
+    .beetrack-fill-#{$color-key} {
+      fill: $color-value;
+    }
+  }
+  

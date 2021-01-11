@@ -1,0 +1,10 @@
+import React from "react";
+import { render } from "./utils";
+import { App } from "./App";
+
+describe("<App /> ", () => {
+  test("renders learn react link", () => {
+    render(<App />);
+    expect(location.pathname).toBe("/home");
+  });
+});

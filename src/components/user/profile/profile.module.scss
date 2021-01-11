@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  align-items: stretch;
+  .information {
+    margin-left: 5px;
+    align-self: center;
+    .name {
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+}

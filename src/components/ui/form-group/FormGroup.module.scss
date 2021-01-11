@@ -1,0 +1,17 @@
+.container {
+  margin-bottom: 10px;
+  .errorInput {
+    border-color: #dc3545;
+  }
+  .errorText {
+    margin-top: 0.25rem;
+    font-size: 80%;
+  }
+  .label {
+    display: block;
+    margin-bottom: 0.25rem;
+    .labelText {
+      font-weight: 600;
+    }
+  }
+}

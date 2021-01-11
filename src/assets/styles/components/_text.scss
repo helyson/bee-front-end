@@ -1,0 +1,5 @@
+@each $color-key, $color-value in $primary-colors {
+  .beetrack-text-#{$color-key} {
+    color: $color-value;
+  }
+}

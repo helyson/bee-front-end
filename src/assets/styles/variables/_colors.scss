@@ -1,0 +1,16 @@
+$black-color: #000000;
+$gray-color: #bbbbbb;
+$main-color: #fab53d;
+$white-color: #ffffff;
+$mute-color: #dcdcdf;
+$gray-secondary-color: #676a6c;
+$danger: #dc3545;
+$primary-colors: (
+  "primary": $main-color,
+  "secondary": $white-color,
+  "gray": $gray-color,
+  "normal": $black-color,
+  "graydark": $gray-secondary-color,
+  "white": $white-color,
+  "danger": $danger,
+);
