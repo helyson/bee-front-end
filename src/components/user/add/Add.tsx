@@ -6,15 +6,28 @@ import { ValidationUserSchema } from "src/helper";
 import styles from "./Add.module.scss";
 
 interface Add {
-  newUser: User;
+  isStory?: boolean;
+  user?: User;
+  title?:string
   onAdd: (user: User) => void;
 }
 const UserAdd: React.FC<Add> = ({
-  newUser: { name, photo, description },
+  isStory = false,
+  title="Agregar nuevo contacto",
+  user: { name, photo, description } = {
+    name: "",
+    description: "",
+    photo: "",
+  },
   onAdd,
 }) => {
   return (
-    <UIModal title="Agregar nuevo contacto" onClose={() => console.log("")}>
+    <UIModal
+      title={title}
+      onClose={() => console.log("")}
+      isStory={true}
+      hasClose
+    >
       <Formik
         initialValues={{ name, photo, description }}
         validationSchema={ValidationUserSchema}
@@ -35,6 +48,7 @@ const UserAdd: React.FC<Add> = ({
               label="Nombre"
               name="name"
               touched={touched}
+              isRequired
             />
             <UIFormGroup
               errors={errors}
@@ -42,6 +56,7 @@ const UserAdd: React.FC<Add> = ({
               name="description"
               touched={touched}
               component="textarea"
+              isRequired
             />
             <div className={styles.buttonWrapper}>
               <UIButton text="Guardar" type="submit" />

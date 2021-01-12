@@ -4,19 +4,39 @@ module.exports = {
   stories: ["../src/**/*.stories.tsx"],
   addons: ["@storybook/addon-docs", "@storybook/preset-scss"],
   webpackFinal: async (config, { configType }) => {
-    // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
-    // You can change the configuration based on that.
-    // 'PRODUCTION' is used when building the static version of storybook.
-
-    // Make whatever fine-grained changes you need
-    config.module.rules.push({
-      test: /\.scss$/,
-      loader: ["sass-loader"],
-      include: path.resolve(__dirname, "../"),
-
-    });
-
-    // Return the altered config
+    config.module.rules.splice(
+      7,
+      1,
+      {
+        test: /\.scss$/,
+        exclude: /\.module\.scss$/,
+        loaders: [
+          require.resolve("style-loader"),
+          {
+            loader: require.resolve("css-loader"),
+            options: {
+              importLoaders: 1,
+            },
+          },
+          require.resolve("sass-loader"),
+        ],
+      },
+      {
+        test: /\.module\.scss$/,
+        loaders: [
+          require.resolve("style-loader"),
+          {
+            loader: require.resolve("css-loader"),
+            options: {
+              importLoaders: 1,
+              modules: true,
+            },
+          },
+          require.resolve("sass-loader"),
+        ],
+      }
+    );
+    config.resolve.alias['src'] = path.resolve(__dirname, '../src')
     return config;
   },
 };

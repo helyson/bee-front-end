@@ -5,7 +5,6 @@ import {
   IconEnum,
   IconPositionEnum,
 } from "src/models/ui";
-
 import { UISvgIcon } from "../icon/Icon";
 import styles from "./Button.module.scss";
 

@@ -3,12 +3,12 @@ import { Column } from "src/models/ui";
 import { UITableRow } from "./row/Row";
 import styles from "./Table.module.scss";
 
-interface TableProps {
-  columns: Column<any>[];
-  data: any[];
+interface TableProps<T> {
+  columns: Column<T>[]
+  data: T[] 
 }
 
-const UITable: React.FC<TableProps> = ({ columns, data }) => {
+ const UITable: <T>(p: TableProps<T>) => React.ReactElement =({ columns, data }) => {
   return (
     <table className={`${styles.container} beetrack-bg-white beetrack-text-graydark`}>
       <thead>
@@ -21,8 +21,8 @@ const UITable: React.FC<TableProps> = ({ columns, data }) => {
         </tr>
       </thead>
       <tbody>
-        {data.map((info) => (
-          <UITableRow columns={columns} key={info.id} info={info}/>
+        {data.map((info, $index) => (
+          <UITableRow columns={columns} key={$index} info={info}/>
         ))}
       </tbody>
     </table>

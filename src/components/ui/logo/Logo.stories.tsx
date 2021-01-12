@@ -1,10 +1,20 @@
-import { StoryBookWrapper } from "../../../helper";
 import React from "react";
+import { StoryBookWrapper } from "src/helper";
+
 import { UILogo } from "./Logo";
 
 export default {
-  title: "Logo",
+  title: "UI Logo",
   component: UILogo,
 };
 
-export const Primary: React.VFC<{}> = () => <StoryBookWrapper><UILogo /></StoryBookWrapper>
+export const Basic: React.VFC<{}> = () => (
+  <StoryBookWrapper>
+    <UILogo />
+  </StoryBookWrapper>
+);
+export const WithProps: React.VFC<{}> = () => (
+  <StoryBookWrapper>
+    <UILogo textLeft="Bee" textRight="Track" />
+  </StoryBookWrapper>
+);

@@ -28,3 +28,17 @@ body{
     width: 100%;
   }
 }
+.beetrack-container-modal{
+  align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    left: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    transition: all .5s;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+}

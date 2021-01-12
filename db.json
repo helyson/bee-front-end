@@ -19,16 +19,10 @@
       "photo": "https://images.pexels.com/photos/157661/young-woman-shooting-model-157661.jpeg?h=350&auto=compress&cs=tinysrgb"
     },
     {
-      "name": "sadas",
-      "photo": "dsa",
-      "description": "asdas",
-      "id": 5
-    },
-    {
-      "name": "asdasd",
-      "photo": "asdasdas",
-      "description": "asdasdasdasd",
-      "id": 6
+      "name": "andres",
+      "photo": "image",
+      "description": "andres",
+      "id": 7
     }
   ]
 }

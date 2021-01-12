@@ -1,57 +1,43 @@
 .modalTitle {
-    border-bottom: solid 2px rgba(196, 196, 196, 0.15);
-    display: flex;
-    padding: 21px 16px;
-    .title {
-      font-weight: 600;
-      font-size: 22px;
-    }
-    .action {
-      float: right;
-      margin-right: 16px;
-      margin-left:auto;
-    }
-    .close {
-      color: #aaa;
-      font-size: 28px;
-      font-weight: bold;
-      margin-right: 0;
-      margin-left: auto;
-      &:hover,
-      :focus {
-        color: black;
-        cursor: pointer;
-        text-decoration: none;
-      }
+  border-bottom: solid 2px rgba(196, 196, 196, 0.15);
+  display: flex;
+  padding: 21px 16px;
+  .title {
+    font-weight: 600;
+    font-size: 22px;
+  }
+  .action {
+    float: right;
+    margin-right: 16px;
+    margin-left: auto;
+  }
+  .close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 0;
+    margin-left: auto;
+    &:hover,
+    :focus {
+      color: black;
+      cursor: pointer;
+      text-decoration: none;
     }
   }
-  .container {
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    left: 0;
-    min-height: 100vh;
-    overflow: hidden;
-    position: fixed;
-    transition: all .5s;
-    top: 0;
-    width: 100vw;
-    z-index: 1;
+}
 
-    .content {
-      background-color: #ffffff;
-      box-shadow: 0 2px 32px rgba(0, 0, 0, 0.25);
-      height: 470px;
-      margin: 0 auto;
-      width: 425px;
-    }
-  
-  }
-  .modalBody{
-      height: calc(100% - 114px);
-      padding-top: 30px;
-      padding-left: 45px;
-      padding-right: 50px;
-      background-color: #f9f9f9;
-  }
+.content {
+  background-color: #ffffff;
+  box-shadow: 0 2px 32px rgba(0, 0, 0, 0.25);
+  height: 470px;
+  margin: 0 auto;
+  width: 425px;
+}
+
+.modalBody {
+  height: calc(100% - 114px);
+  padding-top: 30px;
+  padding-left: 45px;
+  padding-right: 50px;
+  background-color: #f9f9f9;
+}

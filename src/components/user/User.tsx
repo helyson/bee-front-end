@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRequestApi } from "src/hooks";
 import { RequestEnum } from "src/models/api";
-import { User, UserClass } from "src/models/user";
+import { User } from "src/models/user";
 import { setRequestApi } from "src/redux/reducers";
 import { UserSelector } from "src/redux/store";
 import { UserAdd } from "./add/Add";
@@ -52,15 +52,15 @@ const UserMain: React.FC = () => {
   return (
     <>
       {isVisibleAddModal && (
-        <UserAdd newUser={new UserClass()} onAdd={onAddUser} />
+        <UserAdd onAdd={onAddUser} />
       )}
       <UserHeader
-        onChange={(text) => {
+        onChangeText={(text) => {
           let $params = { ...params };
           $params.searchTerm = text;
           setparams($params);
         }}
-        onAdd={() => setisVisibleAddModal(true)}
+        onAddUser={() => setisVisibleAddModal(true)}
       />
       <UserList users={users} onRemoveUser={onRemoveUser} />
       <UserFooter
