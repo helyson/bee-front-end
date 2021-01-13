@@ -18,8 +18,7 @@ describe("User Reducer", () => {
     const result = {
       name: RequestEnum.GetAll,
       numberRequest: 1,
-      params,
-      refreshLoading: undefined,
+      params
     };
     const request: RequestApi = {
       name: RequestEnum.GetAll,

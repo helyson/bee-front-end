@@ -10,7 +10,7 @@ const useRequestApi = (): Status => {
   const dispatch = useDispatch();
   const [hasError, setError] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const { numberRequest, name, params, refreshLoading } = useSelector(
+  const { numberRequest, name, params } = useSelector(
     RequestSelector
   );
 

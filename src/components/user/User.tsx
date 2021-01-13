@@ -12,7 +12,7 @@ import { UserList } from "./list/List";
 
 const UserMain: React.FC = () => {
   const dispatch = useDispatch();
-  const limit = 3;
+  const limit = 6;
   const { hasError } = useRequestApi();
   const { users } = useSelector(UserSelector);
   const [params, setparams] = useState({ limit, page: 1, searchTerm: "" });
@@ -26,16 +26,16 @@ const UserMain: React.FC = () => {
     );
   }, [params]);
   const onRemoveUser = (id: number) => {
-    const params = { id };
-    onPromiseAction(params, RequestEnum.Remove).then(() => {
-      setparams({ limit, page: 1, searchTerm: "" });
+    const $params = { id };
+    onPromiseAction($params, RequestEnum.Remove).then(() => {
+      setparams({ limit, page: params.page, searchTerm: "" });
     });
   };
   const onAddUser = (user: User) => {
-    const params = { user };
+    const $params = { user };
     setisVisibleAddModal(false);
-    onPromiseAction(params, RequestEnum.Add).then(() => {
-      setparams({ limit, page: 1, searchTerm: "" });
+    onPromiseAction($params, RequestEnum.Add).then(() => {
+      setparams({ limit, page: params.page, searchTerm: "" });
     });
   };
   const onPromiseAction = (params: any, name: RequestEnum) =>
@@ -74,7 +74,7 @@ const UserMain: React.FC = () => {
           $params.page = nextPage ? $params.page + 1 : $params.page - 1;
           setparams($params);
         }}
-        hasNextPage={!!users.length}
+        hasNextPage={!!users.length&&users.length === limit}
         hasPreviewPage={params.page !== 1}
       />
     </>

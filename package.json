@@ -2,7 +2,7 @@
   "name": "beeetrack-javascript-test",
   "version": "1.0.0",
   "scripts": {
-    "start": "concurrently \"PORT=3001 react-app-rewired start\" \"node server.js\"",
+    "start": "concurrently \"node server.js\" \"PORT=3001 react-app-rewired start\" ",
     "check-types": "tsc",
     "test": "react-app-rewired test",
     "test:watch": "react-app-rewired test --coverage",

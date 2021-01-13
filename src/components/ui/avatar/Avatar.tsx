@@ -14,6 +14,7 @@ const UIAvatar: React.FC<AvatarProps> = ({ src, size = 50 }) => {
       width={size}
       height={size}
       data-testid="image-element"
+      alt="avatar"
     />
   );
 };

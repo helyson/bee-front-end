@@ -4,8 +4,7 @@ import { RequestApi, RequestEnum } from "src/models/api";
 export const defaultState: RequestApi = {
   name: RequestEnum.NotRequest,
   numberRequest: 0,
-  params: null,
-  refreshLoading: false,
+  params: null
 };
 
 const updateRequest = (numberRequest = 0) => {
@@ -21,7 +20,6 @@ const { reducer: RequestReducer, actions } = createSlice({
       if (action.payload.name !== RequestEnum.NotRequest) {
         state.params = action.payload.params;
         state.numberRequest = updateRequest(state.numberRequest);
-        state.refreshLoading = action.payload.refreshLoading;
       }
       state.name = action.payload.name;
     },
