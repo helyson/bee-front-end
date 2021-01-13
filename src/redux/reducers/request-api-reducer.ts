@@ -16,9 +16,6 @@ const { reducer: RequestReducer, actions } = createSlice({
   name: "request",
   initialState: defaultState,
   reducers: {
-    tryRequestApi: (state) => {
-      state.numberRequest = updateRequest(state.numberRequest);
-    },
 
     setRequestApi: (state, action: PayloadAction<RequestApi>) => {
       if (action.payload.name !== RequestEnum.NotRequest) {
@@ -33,4 +30,4 @@ const { reducer: RequestReducer, actions } = createSlice({
 
 export { RequestReducer };
 
-export const { tryRequestApi, setRequestApi } = actions;
+export const {  setRequestApi } = actions;

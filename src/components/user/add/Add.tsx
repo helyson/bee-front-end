@@ -8,24 +8,26 @@ import styles from "./Add.module.scss";
 interface Add {
   isStory?: boolean;
   user?: User;
-  title?:string
+  title?: string;
   onAdd: (user: User) => void;
+  onClose: () => void;
 }
 const UserAdd: React.FC<Add> = ({
   isStory = false,
-  title="Agregar nuevo contacto",
+  title = "Agregar nuevo contacto",
   user: { name, photo, description } = {
     name: "",
     description: "",
     photo: "",
   },
   onAdd,
+  onClose
 }) => {
   return (
     <UIModal
       title={title}
-      onClose={() => console.log("")}
-      isStory={true}
+      onClose={onClose}
+      isStory={isStory}
       hasClose
     >
       <Formik
@@ -34,7 +36,8 @@ const UserAdd: React.FC<Add> = ({
         onSubmit={({ name, description, photo }) => {
           onAdd({ name, description, photo });
         }}
-        render={({ errors, status, touched }) => (
+      >
+        {({ errors, status, touched }) => (
           <Form>
             <UIFormGroup
               errors={errors}
@@ -59,11 +62,15 @@ const UserAdd: React.FC<Add> = ({
               isRequired
             />
             <div className={styles.buttonWrapper}>
-              <UIButton text="Guardar" type="submit" />
+              <UIButton
+                text="Guardar"
+                type="submit"
+                testId="submit-btn-element"
+              />
             </div>
           </Form>
         )}
-      />
+      </Formik>
     </UIModal>
   );
 };

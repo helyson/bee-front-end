@@ -1,7 +1,7 @@
 import React from "react";
 import { fireEvent, render, cleanup } from "@testing-library/react";
 import { UIButton } from "./Button";
-import { ButtonVarianEnum, ButtonTypeEnum } from "src/models/ui";
+import { ButtonVarianEnum, ButtonTypeEnum, IconEnum, IconPositionEnum } from "src/models/ui";
 
 describe(" <Button />", () => {
   afterEach(cleanup);
@@ -33,13 +33,19 @@ describe(" <Button />", () => {
     expect(onClick).not.toHaveBeenCalled();
   });
 
-  test("should be render icon button", () => {
-    const onClick = jest.fn();
-    const { queryByTestId, container } = render(
-      <UIButton onClick={onClick} buttonType={ButtonTypeEnum.Icon} />
+  test("should be render text icon button", () => {
+    const { queryByTestId,getByText, container } = render(
+      <UIButton
+        buttonType={ButtonTypeEnum.TextIcon}
+        icon={IconEnum.Back}
+        text="Página anterior"
+        variant={ButtonVarianEnum.Gray}
+        iconPosition={IconPositionEnum.Left}
+      />
     );
     const svgElement = queryByTestId("svg-element");
-    expect(container.firstChild).toHaveClass("beetrack-icon-primary");
+    expect(getByText(/Página anterior/i)).toBeInTheDocument();
+    expect(container.firstChild).toHaveClass("beetrack-textIcon-gray");
     expect(svgElement).toBeInTheDocument();
   });
 

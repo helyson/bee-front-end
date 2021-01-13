@@ -10,7 +10,7 @@ interface FormGroup {
   touched: any;
   type?: string;
   component?: string;
-  rows?: number
+  rows?: number;
 }
 const UIFormGroup: React.FC<FormGroup> = ({
   component,
@@ -20,7 +20,7 @@ const UIFormGroup: React.FC<FormGroup> = ({
   name,
   touched,
   type = "text",
-  rows = 3
+  rows = 3,
 }) => {
   return (
     <div
@@ -28,19 +28,28 @@ const UIFormGroup: React.FC<FormGroup> = ({
     >
       <label htmlFor={name} className={styles.label}>
         <span className={styles.labelText}>{label}</span>
-        {isRequired && <span className="beetrack-text-danger">*</span>}
+        {isRequired && (
+          <span
+            data-testid="danger-text-element"
+            className="beetrack-text-danger"
+          >
+            *
+          </span>
+        )}
       </label>
       <Field
-       component={component}
+        component={component}
         name={name}
         type={type}
         className={errors[name] && touched[name] ? `${styles.errorInput}` : ""}
         rows={rows}
+        data-testid="field-element"
       />
       <ErrorMessage
         name={name}
         component="div"
         className={`${styles.errorText} beetrack-text-danger`}
+        data-testid="error-message-element"
       />
     </div>
   );

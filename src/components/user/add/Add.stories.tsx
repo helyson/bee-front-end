@@ -18,12 +18,12 @@ const user: User = {
 
 export const Basic: React.VFC<{}> = () => (
   <StoryBookWrapper>
-    <UserAdd onAdd={() => {}} isStory />
+    <UserAdd onAdd={() => {}} onClose={() => {}} isStory />
   </StoryBookWrapper>
 );
 
 export const UserUpdate: React.VFC<{}> = () => (
   <StoryBookWrapper>
-    <UserAdd title={"Editar Contacto"} onAdd={() => {}} user={user} isStory />
+    <UserAdd title={"Editar Contacto"} onAdd={() => {}} onClose={() => {}}  user={user} isStory />
   </StoryBookWrapper>
 );

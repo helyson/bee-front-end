@@ -20,7 +20,7 @@ const UserFooter: React.FC<footer> = ({
   onChangePage,
 }) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="pagination-element">
       <div className={styles.buttonContainer}>
         {hasPreviewPage && (
           <UIButton

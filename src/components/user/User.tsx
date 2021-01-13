@@ -33,7 +33,7 @@ const UserMain: React.FC = () => {
   };
   const onAddUser = (user: User) => {
     const params = { user };
-    setisVisibleAddModal(false)
+    setisVisibleAddModal(false);
     onPromiseAction(params, RequestEnum.Add).then(() => {
       setparams({ limit, page: 1, searchTerm: "" });
     });
@@ -52,7 +52,12 @@ const UserMain: React.FC = () => {
   return (
     <>
       {isVisibleAddModal && (
-        <UserAdd onAdd={onAddUser} />
+        <UserAdd
+          onAdd={onAddUser}
+          onClose={() => {
+            setisVisibleAddModal(false);
+          }}
+        />
       )}
       <UserHeader
         onChangeText={(text) => {

@@ -10,7 +10,7 @@ interface TableProps<T> {
 
  const UITable: <T>(p: TableProps<T>) => React.ReactElement =({ columns, data }) => {
   return (
-    <table className={`${styles.container} beetrack-bg-white beetrack-text-graydark`}>
+    <table data-testid="table-element" className={`${styles.container} beetrack-bg-white beetrack-text-graydark`}>
       <thead>
         <tr>
           {columns.map(({ key, label, width }) => (

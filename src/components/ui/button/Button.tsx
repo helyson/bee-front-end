@@ -51,7 +51,7 @@ const UIButton: React.FC<ButtonProps> = ({
     >
       <span>{text}</span>
       {!!icon && (
-        <span className={icon ? styles[iconPosition] : ""}>
+        <span className={styles[iconPosition]}>
           <UISvgIcon name={icon} width={widthIcon} height={heightIcon} />
         </span>
       )}

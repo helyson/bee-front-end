@@ -15,7 +15,6 @@ module.exports = {
     silent: false,
     moduleNameMapper: {
       '\\.(css|scss)$': '<rootDir>/jest-setup/style.mock.js',
-      "utils/$1": "<rootDir>/src/utils/test/$1",
-      "@ui":"<rootDir>/src/components/ui/index"
+      "utils/$1": "<rootDir>/src/utils/test/$1"
     }
   };

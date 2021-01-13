@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` <UISvgIcon /> should be render icon 1`] = `
+<div>
+  <svg
+    class="beetrack-fill-primary"
+    data-testid="svg-element"
+    height="28"
+    viewBox="0 0 16 16"
+    width="28"
+  >
+    <path
+      d="M8 0c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zM13 9h-4v4h-2v-4h-4v-2h4v-4h2v4h4v2z"
+      fill=""
+    />
+  </svg>
+</div>
+`;
+
+exports[` <UISvgIcon /> should be render icon basic 1`] = `
+<div>
+  <svg
+    class=""
+    data-testid="svg-element"
+    height="100%"
+    viewBox="0 0 16 16"
+    width="100%"
+  >
+    <path
+      d="M8 0c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zM13 9h-4v4h-2v-4h-4v-2h4v-4h2v4h4v2z"
+      fill=""
+    />
+  </svg>
+</div>
+`;

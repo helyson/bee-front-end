@@ -7,6 +7,5 @@ export {
 export {
   RequestReducer,
   defaultState as defaultStatusRequest,
-  setRequestApi,
-  tryRequestApi,
-} from "./request-api";
+  setRequestApi
+} from "./request-api-reducer";

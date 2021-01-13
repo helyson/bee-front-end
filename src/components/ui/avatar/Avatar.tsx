@@ -8,7 +8,13 @@ interface AvatarProps {
 
 const UIAvatar: React.FC<AvatarProps> = ({ src, size = 50 }) => {
   return (
-    <img className={styles.container} src={src} width={size} height={size} />
+    <img
+      className={styles.container}
+      src={src}
+      width={size}
+      height={size}
+      data-testid="image-element"
+    />
   );
 };
 
